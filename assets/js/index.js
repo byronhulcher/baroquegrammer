@@ -1,8 +1,8 @@
 $(function() {
-  const PARENT_FACE_X = '320px'; // Distance of face hole from left. Gross.
-  const PARENT_FACE_Y = '260px' // Distance of face hole from top. Gross.
-  const PARENT_FACE_HEIGHT = '110px' // The height of the face hole. Gross.
-  const PARENT_FACE_WIDTH = 75; // The width of the face hole. Gross.
+  const PARENT_FACE_X = '325px'; // Distance of face hole from left. Gross.
+  const PARENT_FACE_Y = '85px' // Distance of face hole from top. Gross.
+  const PARENT_FACE_HEIGHT = '124px' // The height of the face hole. Gross.
+  const PARENT_FACE_WIDTH = 92; // The width of the face hole. Gross.
 
   var imageFace = $('#image-face'); // The element the face is planted onto
   var imageTarget = $('#image-target'); // The "face hole". Gross.
