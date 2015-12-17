@@ -49,10 +49,12 @@ $(function() {
   // Spits the face out into the document. To be honest I just wanted to use the
   // word "spits" here and you can't stop me. I won't merge your PR to change
   // that.
-  function placeFace() {
+  function placeFace(callback) {
+    imageFace.one("load", callback);
     var imagePath = imagePreview.attr('src');
 
     imageFace.attr('src', imagePath);
+    
   }
 
   // This is where the face detection / image "validation" is done.
@@ -62,8 +64,7 @@ $(function() {
         var face = randomFace(faces);
 
         if (face) {
-          placeFace();
-          sizeFace(face);
+          placeFace(sizeFace.bind(this, face));
         } else {
           alert(
             "Yikes! Couldn't find a face in this image. Try another one. " +
