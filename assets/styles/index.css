@@ -12,18 +12,25 @@
 
 .image-target {
   background: #000;
-  height: 186px;
-  left: 157px;
   overflow: hidden;
   position: absolute;
-  top: 76px;
-  width: 135px;
-  z-index: 50;
+  z-index: -1;
 }
 
 .main-image {
+  /*
   left: 0;
   position: absolute;
   top: 0;
+  */
   z-index: 100;
+}
+
+
+#whichBefore:checked ~ #image-container-2 {
+  display: none;
+}
+
+#whichAfter:checked ~ #image-container-1 {
+  display: none;
 }

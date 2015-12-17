@@ -2,7 +2,7 @@
 <html>
   <head lang='en'>
     <meta charset='UTF-8'>
-    <title>Baroquegrammer</title>
+    <title>Shkrelizr</title>
 
     <link rel='stylesheet' type='text/css' href='assets/styles/index.css'  />
   </head>
@@ -11,16 +11,33 @@
     <form>
       <input type='file' id='image-file-field' name='foo'>
       <img id='image-preview' class='image-preview'></img>
-      <input type='submit' id='image-upload' value='Upload Chill Image'>
     </form>
 
-    <div id='image-container' class='image-container'>
-      <div class='image-target'>
-        <img id='image-face' class='image-face'>
+    <br>
+
+    <form>
+      <input type="radio" name="which" value="before" id="whichBefore" checked> <label for="whichBefore">Before</label>
+      <input type="radio" name="which" value="after" id="whichAfter"> <label for="whichAfter">After</label>
+
+      <br><br>
+
+      <div id='image-container-1' class='image-container'>
+        <div id='image-target-1' class='image-target' >
+          <img id='image-face-1' class='image-face'>
+        </div>
+
+        <img src='assets/images/martin.png' class='main-image'>
       </div>
 
-      <img src='assets/images/main.png' class='main-image'>
-    </div>
+      <div id='image-container-2' class='image-container'>
+        <div id='image-target-2' class='image-target' >
+          <img id='image-face-2' class='image-face'>
+        </div>
+
+        <img src='assets/images/martin4.png' class='main-image'>
+      </div>
+
+    </form>
 
     <!-- Include some chill JavaScript dependencies here y'all -->
     <script src='node_modules/jquery/dist/jquery.min.js'></script>
