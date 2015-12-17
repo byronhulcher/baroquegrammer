@@ -1,21 +1,36 @@
 $(function() {
-  const PARENT_FACE_X = '325px'; // Distance of face hole from left. Gross.
-  const PARENT_FACE_Y = '85px' // Distance of face hole from top. Gross.
-  const PARENT_FACE_HEIGHT = '124px' // The height of the face hole. Gross.
-  const PARENT_FACE_WIDTH = 92; // The width of the face hole. Gross.
 
-  var imageFace = $('#image-face'); // The element the face is planted onto
-  var imageTarget = $('#image-target'); // The "face hole". Gross.
+  const PARENT_FACE_X_1 = '320px'; // Distance of face hole from left. Gross.
+  const PARENT_FACE_Y_1 = '260px' // Distance of face hole from top. Gross.
+  const PARENT_FACE_HEIGHT_1 = '110px' // The height of the face hole. Gross.
+  const PARENT_FACE_WIDTH_1 = 75; // The width of the face hole. Gross.
+
+  const PARENT_FACE_X_2 = '325px'; // Distance of face hole from left. Gross.
+  const PARENT_FACE_Y_2 = '85px' // Distance of face hole from top. Gross.
+  const PARENT_FACE_HEIGHT_2 = '124px' // The height of the face hole. Gross.
+  const PARENT_FACE_WIDTH_2 = 92; // The width of the face hole. Gross.
+
+  var imageFace = $('.image-face'); // The element the face is planted onto
+  var imageFace1 = $('#image-face-1');
+  var imageFace2 = $('#image-face-2');
+  var imageTarget1 = $('#image-target-1'); // The "face hole". Gross.
+  var imageTarget2 = $('#image-target-2'); // The "face hole". Gross.
   var imagePreview = $('#image-preview');
 
   // Place the image target element on document load from the constants that are
   // defined above.
   $(document).ready(function() {
-    imageTarget.
-      css('left', PARENT_FACE_X).
-      css('top', PARENT_FACE_Y).
-      css('height', PARENT_FACE_HEIGHT).
-      css('width', PARENT_FACE_WIDTH)
+    imageTarget1.
+      css('left', PARENT_FACE_X_1).
+      css('top', PARENT_FACE_Y_1).
+      css('height', PARENT_FACE_HEIGHT_1).
+      css('width', PARENT_FACE_WIDTH_1)
+
+    imageTarget2.
+      css('left', PARENT_FACE_X_2).
+      css('top', PARENT_FACE_Y_2).
+      css('height', PARENT_FACE_HEIGHT_2).
+      css('width', PARENT_FACE_WIDTH_2)
   });
 
   // Pulls the face out from the file input
@@ -28,7 +43,7 @@ $(function() {
   // Return how big the original face is in comparision with the "face hole".
   // Again, gross.
   function findScale(face) {
-    return (PARENT_FACE_WIDTH / face.width);
+    return (PARENT_FACE_WIDTH_2 / face.width);
   }
 
   // Spits the face out into the document. To be honest I just wanted to use the
@@ -81,11 +96,20 @@ $(function() {
 
   // Actually size the face behind the main image
   function sizeFace(face) {
-    var scale = findScale(face);
+    var scale = PARENT_FACE_WIDTH_1 / face.width;
     var marginLeft = face.x * scale;
     var marginTop = face.y * scale;
 
-    imageFace.
+    imageFace1.
+      css('margin-left', -(marginLeft)).
+      css('margin-top', -(marginTop)).
+      css('transform', 'scale(' + scale + ')');
+
+    var scale = PARENT_FACE_WIDTH_2 / face.width;
+    var marginLeft = face.x * scale;
+    var marginTop = face.y * scale;
+
+    imageFace2.
       css('margin-left', -(marginLeft)).
       css('margin-top', -(marginTop)).
       css('transform', 'scale(' + scale + ')');
