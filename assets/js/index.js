@@ -1,5 +1,4 @@
 $(function() {
-
   const PARENT_FACE_X_1 = '320px'; // Distance of face hole from left. Gross.
   const PARENT_FACE_Y_1 = '260px' // Distance of face hole from top. Gross.
   const PARENT_FACE_HEIGHT_1 = '110px' // The height of the face hole. Gross.
